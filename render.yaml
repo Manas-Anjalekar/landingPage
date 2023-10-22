@@ -1,0 +1,19 @@
+databases:
+  - name: postgres
+    ipAllowList: []
+    databaseName: my-psql-database
+    user: Manas Anjalekar
+
+services:
+  - type: web
+    name: Frontend_Mentor_Dropdown
+    env: ruby
+    buildCommand: "./render-build.sh"
+    startCommand: "bundle exec rails s"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: postgres
+          property: connectionString
+      - key: RAILS_MASTER_KEY
+        sync: false
