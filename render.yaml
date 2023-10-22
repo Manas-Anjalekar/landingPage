@@ -1,8 +1,8 @@
 databases:
   - name: postgres
     ipAllowList: []
-    databaseName: my-psql-database
-    user: Manas Anjalekar
+    databaseName: Frontend_Mentor_Dropdown
+    user: Fontend_Mentor_Dropdown
 
 services:
   - type: web
