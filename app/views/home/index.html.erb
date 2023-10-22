@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-white mx-5 p-4" style="font-family: 'Epilogue', sans-serif;">
+  <%# <a class="navbar-brand" href="#"><%= image_tag("logo.svg") %></a>
+  <a class="navbar-brand" style="font-weight: 700; font-size: 40px; color: hsl(0, 0%, 8%);" href="#">snap</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse mx-5" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item dropdown mx-3">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Features
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#"><%= image_tag("icon-todo.svg", class:"mr-3") %>Todo List</a>
+          <a class="dropdown-item" href="#"><%= image_tag("icon-calendar.svg", class:"mr-3") %>Calendar</a>
+          <%# <div class="dropdown-divider"></div> %>
+          <a class="dropdown-item" href="#"><%= image_tag("icon-reminders.svg", class:"mr-3") %>Reminders</a>
+          <a class="dropdown-item" href="#"><%= image_tag("icon-planning.svg", class:"mr-3") %>Planning</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown mx-3">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Company
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">History</a>
+          <a class="dropdown-item" href="#">Our Team</a>
+          <%# <div class="dropdown-divider"></div> %>
+          <a class="dropdown-item" href="#">Blog</a>
+        </div>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="#">Careers</a>
+      </li>
+      <li class="nav-item mx-3">
+        <a class="nav-link" href="#">About</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <button class="btn btn my-2 mx-4 my-sm-0" type="submit">Login</button>
+      <button class="btn btn-outline-dark my-2 mx-4 my-sm-0" type="submit">Register</button>
+    </form>
+  </div>
+</nav>
+
+<% if request.variant.empty? %>
+    <%= render partial: 'laptop_view' %>
+<% else %>
+    <%= render partial: 'mobile_view' %>
+<% end %>
